@@ -3,6 +3,10 @@
 
 /* common
 ----------------------------------------------------------------------------- */
+.alert, .alert-danger{
+    margin-top: 1em;
+}
+
 body{
 	font-size: 12px;
 	font-family: 'Open Sans', arial, tahoma, sans-serif;
