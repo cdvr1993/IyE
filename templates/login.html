@@ -21,6 +21,7 @@
                 <div class="span5">
                     <h4 class="title"><span class="text"><strong>Login</strong> Form</span></h4>
                     <form id="login" action="/user/login" method="post">
+                    {% csrf_token %}
                         <input type="hidden" name="next" value="/">
                         <fieldset>
                             <div class="control-group">
@@ -49,6 +50,7 @@
                 <div class="span7">
                     <h4 class="title"><span class="text"><strong>Register</strong> Form</span></h4>
                     <form id="reg" action="/user/new" method="post" class="form-stacked"  onsubmit="register_new_user(event);">
+                        {% csrf_token %}
                         <fieldset>
                             <div class="control-group">
                                 <label class="control-label">Username</label>

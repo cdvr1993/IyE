@@ -10,15 +10,18 @@ from django.template import RequestContext
 
 
 def index(req):
-    print(req.user)
+    """ Returns the site's homepage
+    """
     return render_to_response('index.html', dict(), RequestContext(req))
 
 
 def login(req):
+    """ It presents the login and registration forms
+    We use another url to make the POST of the registration form
+    """
     res = dict()
     if req.method == 'POST':
         d = req.POST
-        print(d)
         user = d.get('user', None)
         passw = d.get('pass', None)
         if user is None or passw is None:
@@ -36,20 +39,57 @@ def login(req):
 
 
 def register(req):
+    """ Handler of the POSTs from the registration form
+    """
     res = dict()
     if req.method == 'POST':
         d = req.POST
         user = d.get('user', None)
         passw = d.get('pass', None)
         email = d.get('email', None)
-        print(d)
+        res['msg_type'] = 'error'
+        res['redirect'] = '/user/login'
         if user is None or passw is None or email is None:
-            res['msg_reg'] = 'Falta uno de los campos para completar el registro'
+            res['msg'] = 'Falta uno de los campos para completar el registro'
         else:
             user = User.objects.create_user(user, email, passw)
             if user is None:
-                res['msg_reg'] = 'No fue posible registrar al usuario'
+                res['msg'] = 'No fue posible registrar al usuario'
             else:
-                res['success_reg'] = 'Usuario registrado con éxito'
-        return render_to_response('login.html', res, RequestContext(req))
+                res['msg'] = 'Usuario registrado con éxito'
+                res['msg_type'] = 'success'
+        return render_to_response('msg.html', res, RequestContext(req))
     return Http404()
+
+
+def contact(req):
+    """ It presents the contact form
+    TODO:
+        We have to append the message and send it to our mail ->
+            d[name]     ==  user's fullname
+            d[email]    ==  user's email
+            d[msg]      ==  user's message
+    """
+    if req.method == 'GET':
+        return render_to_response('contact.html')
+    else:
+        d = req.POST
+        res = dict()
+        res['msg'] = 'Éxito enviando el mensaje'
+        res['msg_type'] = 'success'
+        res['redirect'] = '/contact'
+        return render_to_response('msg.html', res)
+
+
+def about(req):
+    """ It presents information about us
+    TODO:
+        Maybe will be a good idea to check the actual content of this section
+    """
+    return render_to_response('about.html')
+
+
+def cart(req):
+    """ Currently doesn't work, it only presents the HTML
+    """
+    return render_to_response('cart.html')

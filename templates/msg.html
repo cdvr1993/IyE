@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block head %}
+    <script type="application/javascript">
+        $(function(){
+           setTimeout(function(){
+               window.location = "{{ redirect }}";
+           }, 4000);
+        });
+    </script>
+{% endblock %}
+{% block body %}
+    <div class="alert-{{ msg_type }}" style="margin: 2.5em"><h3 style="padding: .5em; margin-left: .5em">{{ msg }}</h3></div>
+{% endblock %}

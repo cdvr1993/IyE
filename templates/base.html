@@ -3,10 +3,9 @@
 <html>
     <head lang="en">
         <meta charset="utf-8">
-        <title>Bootstrap E-commerce Templates</title>
+        <title>Maui Geek</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="">
-        <!--[if ie]><meta content='IE=8' http-equiv='X-UA-Compatible'/><![endif]-->
         <!-- bootstrap -->
         <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
         <link href="{% static 'css/bootstrap-responsive.min.css' %}" rel="stylesheet">
@@ -17,12 +16,28 @@
         <link href="{% static 'css/flexslider.css' %}" rel="stylesheet"/>
         <link href="{% static 'css/main.css' %}" rel="stylesheet"/>
 
+        <link rel="shortcut icon" href="{% static 'img/logo_maui_geek.png' %}" />
+
         <!-- scripts -->
         <script src="{% static 'js/jquery-1.7.2.min.js' %}"></script>
         <script src="{% static 'js/bootstrap.min.js' %}"></script>
         <script src="{% static 'js/superfish.js' %}"></script>
+        <script src="{% static 'js/supersubs.js' %}"></script>
+        <script src="{% static 'js/hoverIntent.js' %}"></script>
         <script src="{% static 'js/common.js' %}"></script>
         <script src="{% static 'js/index.js' %}"></script>
+        <script>
+            jQuery(document).ready(function(){
+                jQuery('ul.sf-menu').supersubs({
+                    minWidth:	12,	 // minimum width of submenus in em units
+                    maxWidth:	27,	 // maximum width of submenus in em units
+                    extraWidth:	1	 // extra width can ensure lines don't sometimes turn over
+                                     // due to slight rounding differences and font-family
+                }).superfish();		 // call supersubs first, then superfish, so that subs are
+                                     // not display:none when measuring. Call before initialising
+                                     // containing tabs for same reason.
+            });
+        </script>
         {% block head %}{% endblock %}
     </head>
     <body>
@@ -30,14 +45,15 @@
             <div class="row">
                 <div class="span4">
                     <form method="POST" class="search_form">
+                        {% csrf_token %}
                         <input type="text" class="input-block-level search-query" Placeholder="eg. T-sirt">
                     </form>
                 </div>
                 <div class="span8">
                     <div class="account pull-right">
                         <ul class="user-menu">
-                            <li><a href="#">My Account</a></li>
-                            <li><a href="cart.html">Your Cart</a></li>
+                            <li><a href="#">Mi cuenta</a></li>
+                            <li><a href="/cart">Carrito</a></li>
                             <li><a href="checkout.html">Checkout</a></li>
                             <li><a href="/user/login">{% if user.is_authenticated %}{{ user|capfirst }}{% else %}Login{% endif %}</a></li>
                         </ul>
@@ -48,9 +64,12 @@
         <div id="wrapper" class="container">
             <section class="navbar main-menu">
                 <div class="navbar-inner main-menu">
-                    <a href="index.html" class="logo pull-left"><img src="{% static 'img/logo.png' %}" class="site_logo" alt=""></a>
+                    <b class="pull-left" style="margin-top:.6em; margin-right: 10.5px; font-size: 16px;">Maui Geek</b>
+                    <a href="/" class="logo pull-left">
+                        <img style="height: 40px" src="{% static 'img/logo1.png' %}" class="site_logo" alt="">
+                    </a>
                     <nav id="menu" class="pull-right">
-                        <ul>
+                        <ul class="sf-menu">
                             <li><a href="products.html">Woman</a>
                                 <ul>
                                     <li><a href="products.html">Lacinia nibh</a></li>
@@ -59,7 +78,7 @@
                                 </ul>
                             </li>
                             <li><a href="products.html">Man</a></li>
-                            <li><a href="products.html">Sport</a>
+                            <li><a href="./products.html">Sport</a>
                                 <ul>
                                     <li><a href="products.html">Gifts and Tech</a></li>
                                     <li><a href="products.html">Ties and Hats</a></li>
@@ -79,32 +98,21 @@
                     <div class="span3">
                         <h4>Navigation</h4>
                         <ul class="nav">
-                            <li><a href="./index.html">Homepage</a></li>
-                            <li><a href=".">About Us</a></li>
-                            <li><a href="./contact.html">Contac Us</a></li>
-                            <li><a href="./cart.html">Your Cart</a></li>
+                            <li><a href="/">Inicio</a></li>
+                            <li><a href="./about">Acerca de nosotros</a></li>
+                            <li><a href="/contact">Contáctanos</a></li>
+                            <li><a href="/cart">Carrito</a></li>
                             <li><a href="/user/login">Login</a></li>
                         </ul>
                     </div>
                     <div class="span4">
                         <h4>My Account</h4>
                         <ul class="nav">
-                            <li><a href="#">My Account</a></li>
-                            <li><a href="#">Order History</a></li>
-                            <li><a href="#">Wish List</a></li>
-                            <li><a href="#">Newsletter</a></li>
+                            <li><a href="#">Mi cuenta</a></li>
+                            <li><a href="#">Historia de órdenes</a></li>
+                            <li><a href="#">Lista de deseos</a></li>
+                            <li><a href="#">Promociones</a></li>
                         </ul>
-                    </div>
-                    <div class="span5">
-                        <p class="logo"><img src="{% static 'img/logo.png' %}" class="site_logo" alt=""></p>
-                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. the  Lorem Ipsum has been the industry's standard dummy text ever since the you.</p>
-                        <br/>
-                        <span class="social_icons">
-                            <a class="facebook" href="#">Facebook</a>
-                            <a class="twitter" href="#">Twitter</a>
-                            <a class="skype" href="#">Skype</a>
-                            <a class="vimeo" href="#">Vimeo</a>
-                        </span>
                     </div>
                 </div>
             </section>

@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block body %}
+ <section class="main-content">
+    <div class="row">
+        <div class="center">
+            <h3 class="title">Maui Geek</h3>
+        </div>
+    </div>
+    <div class="row">
+        <div class="span3">
+            <img src="{% static 'img/logo_maui_geek.png' %}">
+        </div>
+        <div class="span7">
+            <p style="text-align: justify;">
+                Somos un grupo de estudiantes del ITESO que buscamos ofrecer una solución confiable a la comercialización
+                de ropa Geek en México. Mientras concenbíamos esta idea, fuimos analizando los diversos problemas con los
+                que normalmente se presenta un mexicano al querer adquirido un producto de este tipo: y los puntos que
+                encontramos fueron los siguientes:
+            </p>
+            <ul>
+                <li>Tardanza en las entregas</li>
+                <li>Exigencia de una tarjeta de crédito para pagar</li>
+                <li>Soluciones extranjeras de elevado costo</li>
+                <li>Diseños agotados</li>
+            </ul>
+        </div>
+    </div>
+ </section>
+{% endblock %}
