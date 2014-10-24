@@ -6,17 +6,20 @@
         <title>Maui Geek</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="">
+
         <!-- bootstrap -->
         <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
-        <link href="{% static 'css/bootstrap-responsive.min.css' %}" rel="stylesheet">
+        <link href="{% static 'css/bootstrap-responsive.min.css' %}"
+              rel="stylesheet">
 
-        <link href="{% static 'css/bootstrappage.css' %}" rel="stylesheet"/>
+        <link href="{% static 'css/bootstrappage.css' %}" rel="stylesheet" />
 
         <!-- global styles -->
-        <link href="{% static 'css/flexslider.css' %}" rel="stylesheet"/>
-        <link href="{% static 'css/main.css' %}" rel="stylesheet"/>
+        <link href="{% static 'css/flexslider.css' %}" rel="stylesheet" />
+        <link href="{% static 'css/main.css' %}" rel="stylesheet" />
 
-        <link rel="shortcut icon" href="{% static 'img/logo_maui_geek.png' %}" />
+        <link rel="shortcut icon" href="{% static 'img/logo_maui_geek.png' %}"
+                />
 
         <!-- scripts -->
         <script src="{% static 'js/jquery-1.7.2.min.js' %}"></script>
@@ -31,10 +34,12 @@
                 jQuery('ul.sf-menu').supersubs({
                     minWidth:	12,	 // minimum width of submenus in em units
                     maxWidth:	27,	 // maximum width of submenus in em units
-                    extraWidth:	1	 // extra width can ensure lines don't sometimes turn over
-                                     // due to slight rounding differences and font-family
-                }).superfish();		 // call supersubs first, then superfish, so that subs are
-                                     // not display:none when measuring. Call before initialising
+                    extraWidth:	1	 // extra width can ensure lines don't
+                                     // sometimes turn over due to slight
+                                     // rounding differences and font-family
+                }).superfish();		 // call supersubs first, then superfish, so
+                                     // that subs are not display:none when
+                                     // measuring. Call before initialising
                                      // containing tabs for same reason.
             });
         </script>
@@ -46,16 +51,39 @@
                 <div class="span4">
                     <form method="POST" class="search_form">
                         {% csrf_token %}
-                        <input type="text" class="input-block-level search-query" Placeholder="eg. T-sirt">
+                        <input type="text" class="input-block-level
+                            search-query" Placeholder="eg. T-sirt">
                     </form>
                 </div>
                 <div class="span8">
                     <div class="account pull-right">
                         <ul class="user-menu">
-                            <li><a href="#">Mi cuenta</a></li>
-                            <li><a href="/cart">Carrito</a></li>
-                            <li><a href="checkout.html">Checkout</a></li>
-                            <li><a href="/user/login">{% if user.is_authenticated %}{{ user|capfirst }}{% else %}Login{% endif %}</a></li>
+                            <li>
+                                <a href="#">
+                                    Mi cuenta
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/cart">
+                                    Carrito
+                                </a>
+                            </li>
+                            <li>
+                                <a href="checkout.html">
+                                    Checkout
+                                </a>
+                            </li>
+                            <li>
+                                {% if user.is_authenticated %}
+                                    <a href="/user/info">
+                                        {{ user|capfirst }}
+                                    </a>
+                                {% else %}
+                                    <a href="/user/login">
+                                        Login
+                                    </a>
+                                {% endif %}
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -64,30 +92,79 @@
         <div id="wrapper" class="container">
             <section class="navbar main-menu">
                 <div class="navbar-inner main-menu">
-                    <b class="pull-left" style="margin-top:.6em; margin-right: 10.5px; font-size: 16px;">Maui Geek</b>
+                    <b class="pull-left" style="margin-top:.6em; margin-right: 10.5px; font-size: 16px;">
+                        Maui Geek
+                    </b>
                     <a href="/" class="logo pull-left">
-                        <img style="height: 40px" src="{% static 'img/logo1.png' %}" class="site_logo" alt="">
+                        <img style="height: 40px" src="{% static 'img/logo1.png' %}"
+                             class="site_logo" alt="">
                     </a>
                     <nav id="menu" class="pull-right">
                         <ul class="sf-menu">
-                            <li><a href="products.html">Woman</a>
+                            <li>
+                                <a href="products.html">
+                                    Woman
+                                </a>
                                 <ul>
-                                    <li><a href="products.html">Lacinia nibh</a></li>
-                                    <li><a href="products.html">Eget molestie</a></li>
-                                    <li><a href="products.html">Varius purus</a></li>
+                                    <li>
+                                        <a href="products.html">
+                                            Lacinia nibh
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="products.html">
+                                            Eget molestie
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="products.html">
+                                            Varius purus
+                                        </a>
+                                    </li>
                                 </ul>
                             </li>
-                            <li><a href="products.html">Man</a></li>
-                            <li><a href="./products.html">Sport</a>
+                            <li>
+                                <a href="products.html">
+                                    Man
+                                </a>
+                            </li>
+                            <li>
+                                <a href="./products.html">
+                                    Sport
+                                </a>
                                 <ul>
-                                    <li><a href="products.html">Gifts and Tech</a></li>
-                                    <li><a href="products.html">Ties and Hats</a></li>
-                                    <li><a href="products.html">Cold Weather</a></li>
+                                    <li>
+                                        <a href="products.html">
+                                            Gifts and Tech
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="products.html">
+                                            Ties and Hats
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="products.html">
+                                            Cold Weather
+                                        </a>
+                                    </li>
                                 </ul>
                             </li>
-                            <li><a href="products.html">Hangbag</a></li>
-                            <li><a href="products.html">Best Seller</a></li>
-                            <li><a href="products.html">Top Seller</a></li>
+                            <li>
+                                <a href="products.html">
+                                    Hangbag
+                                </a>
+                            </li>
+                            <li>
+                                <a href="products.html">
+                                    Best Seller
+                                </a>
+                            </li>
+                            <li>
+                                <a href="products.html">
+                                    Top Seller
+                                </a>
+                            </li>
                         </ul>
                     </nav>
                 </div>
@@ -98,26 +175,64 @@
                     <div class="span3">
                         <h4>Navigation</h4>
                         <ul class="nav">
-                            <li><a href="/">Inicio</a></li>
-                            <li><a href="./about">Acerca de nosotros</a></li>
-                            <li><a href="/contact">Contáctanos</a></li>
-                            <li><a href="/cart">Carrito</a></li>
-                            <li><a href="/user/login">Login</a></li>
+                            <li>
+                                <a href="/">
+                                    Inicio
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/about">
+                                    Acerca de nosotros
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/contact">
+                                    Contáctanos
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/cart">
+                                    Carrito
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/user/login">
+                                    Login
+                                </a>
+                            </li>
                         </ul>
                     </div>
                     <div class="span4">
                         <h4>My Account</h4>
                         <ul class="nav">
-                            <li><a href="#">Mi cuenta</a></li>
-                            <li><a href="#">Historia de órdenes</a></li>
-                            <li><a href="#">Lista de deseos</a></li>
-                            <li><a href="#">Promociones</a></li>
+                            <li>
+                                <a href="#">
+                                    Mi cuenta
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    Historia de órdenes
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    Lista de deseos
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    Promociones
+                                </a>
+                            </li>
                         </ul>
                     </div>
                 </div>
             </section>
             <section id="copyright">
-                <span>Copyright 2013 bootstrappage template  All right reserved.</span>
+                <span>
+                    Copyright 2013 bootstrappage template  All right reserved.
+                </span>
             </section>
         </div>
     </body>

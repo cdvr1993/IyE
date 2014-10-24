@@ -4,7 +4,7 @@ from json import dumps
 
 from django.http import HttpResponse, Http404, HttpResponseRedirect
 from django.contrib.auth.models import User
-from django.contrib.auth import authenticate, login as loginD
+from django.contrib.auth import authenticate, login as login_user
 from django.shortcuts import render_to_response
 from django.template import RequestContext
 
@@ -31,7 +31,7 @@ def login(req):
             if user is None:
                 res['msg'] = 'Usuario y/o contraseña incorrecto'
             elif user.is_active:
-                loginD(req, user)
+                login_user(req, user)
                 return HttpResponseRedirect('/')
             else:
                 res['msg'] = 'Cuenta desactivada'
@@ -93,3 +93,7 @@ def cart(req):
     """ Currently doesn't work, it only presents the HTML
     """
     return render_to_response('cart.html')
+
+def user_info(req):
+    if req.method == 'GET':
+        return render_to_response('user_info.html')

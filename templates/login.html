@@ -10,84 +10,136 @@
     </script>
 {% endblock %}
 {% block body %}
-        <section class="header_text sub">
-        <img class="pageBanner" src="{% static 'img/pageBanner.png' %}" alt="New products" >
-            {% if success_reg %}
-                    <div class="alert alert-success" role="alert" onclick="$(this).remove();">{{ success_reg }}</div>
-            {% endif %}
-        </section>
-        <section class="main-content">
-            <div class="row">
-                <div class="span5">
-                    <h4 class="title"><span class="text"><strong>Login</strong> Form</span></h4>
-                    <form id="login" action="/user/login" method="post">
-                    {% csrf_token %}
-                        <input type="hidden" name="next" value="/">
-                        <fieldset>
-                            <div class="control-group">
-                                <label class="control-label">Username</label>
-                                <div class="controls">
-                                    <input type="text" placeholder="Enter your username" name="user" class="input-xlarge">
-                                </div>
-                            </div>
-                            <div class="control-group">
-                                <label class="control-label">Contraseña</label>
-                                <div class="controls">
-                                    <input type="password" placeholder="Enter your password" name="pass" class="input-xlarge">
-                                </div>
-                            </div>
-                            <div class="control-group">
-                                <input tabindex="3" class="btn btn-inverse large" type="submit" value="Sign into your account">
-                                {% if msg %}
-                                    <div class="alert alert-danger" role="alert" onclick="$(this).remove();">{{ msg }}</div>
-                                {% endif %}
-                                <hr>
-                                <p class="reset">Recover your <a tabindex="4" href="#" title="Recover your username or password">username or password</a></p>
-                            </div>
-                        </fieldset>
-                    </form>
+    <section class="header_text sub">
+    <img class="pageBanner" src="{% static 'img/pageBanner.png' %}"
+        alt="New products" >
+        {% if success_reg %}
+                <div class="alert alert-success" role="alert"
+                    onclick="$(this).remove();">
+                    {{ success_reg }}
                 </div>
-                <div class="span7">
-                    <h4 class="title"><span class="text"><strong>Register</strong> Form</span></h4>
-                    <form id="reg" action="/user/new" method="post" class="form-stacked"  onsubmit="register_new_user(event);">
-                        {% csrf_token %}
-                        <fieldset>
-                            <div class="control-group">
-                                <label class="control-label">Username</label>
-                                <div class="controls">
-                                    <input name="user" type="text" placeholder="Enter your username" class="input-xlarge">
-                                </div>
+        {% endif %}
+    </section>
+    <section class="main-content">
+        <div class="row">
+            <div class="span5">
+                <h4 class="title">
+                    <span class="text">
+                        <strong>Login</strong> Form
+                    </span>
+                </h4>
+
+                <!-- Login form -->
+                <form id="login" action="/user/login" method="post">
+                {% csrf_token %}
+                    <input type="hidden" name="next" value="/">
+                    <fieldset>
+
+                        <div class="control-group">
+                            <label class="control-label">Username</label>
+                            <div class="controls">
+                                <input type="text"
+                                       placeholder="Enter your username"
+                                       name="user" class="input-xlarge">
                             </div>
-                            <div class="control-group">
-                                <label class="control-label">Email address:</label>
-                                <div class="controls">
-                                    <input name="email" type="text" placeholder="Enter your email" class="input-xlarge">
-                                </div>
+                        </div>
+
+                        <div class="control-group">
+                            <label class="control-label">
+                                Contraseña
+                            </label>
+                            <div class="controls">
+                                <input type="password"
+                                       placeholder="Enter your password"
+                                       name="pass" class="input-xlarge">
                             </div>
-                            <div class="control-group">
-                                <label class="control-label">Password:</label>
-                                <div class="controls">
-                                    <input name="pass" type="password" placeholder="Enter your password" class="input-xlarge">
-                                </div>
-                            </div>
-                            <div class="control-group">
-                                <label class="control-label">Password:</label>
-                                <div class="controls">
-                                    <input name="pass-re" type="password" placeholder="Enter your password" class="input-xlarge">
-                                </div>
-                            </div>
-                            <div class="control-group">
-                                <p>Now that we know who you are. I'm not a mistake! In a comic, you know how you can tell who the arch-villain's going to be?</p>
-                            </div>
-                            <hr>
-                            <div class="actions"><input tabindex="9" class="btn btn-inverse large" type="submit"
-                                                        value="Create your account"></div>
-                            {% if msg_reg %}
-                                    <div class="alert alert-danger" role="alert" onclick="$(this).remove();">{{ msg_reg }}</div>
+                        </div>
+
+                        <div class="control-group">
+                            <input tabindex="3" class="btn btn-inverse large"
+                                   type="submit" value="Sign into your account">
+                            {% if msg %}
+                                <div class="alert alert-danger" role="alert"
+                                     onclick="$(this).remove();">{{ msg }}</div>
                             {% endif %}
-                        </fieldset>
-                    </form>
-                </div>
+                            <hr>
+                            <p class="reset">Recover your
+                                <a tabindex="4"href="#"
+                                   title="Recover your username or password">
+                                    username or password
+                                </a>
+                            </p>
+                        </div>
+
+                    </fieldset>
+                </form>
             </div>
-        </section>
+
+            <div class="span7">
+                <h4 class="title">
+                    <span class="text">
+                        <strong>Register</strong> Form
+                    </span>
+                </h4>
+
+                <!-- Register form -->
+                <form id="reg" action="/user/new" method="post"
+                    class="form-stacked"  onsubmit="register_new_user(event);">
+                    {% csrf_token %}
+
+                    <fieldset>
+                        <div class="control-group">
+                            <label class="control-label">
+                                Username
+                            </label>
+                            <div class="controls">
+                                <input name="user" type="text"
+                                       placeholder="Enter your username"
+                                       class="input-xlarge" />
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label">
+                                Email address:
+                            </label>
+                            <div class="controls">
+                                <input name="email" type="text"
+                                       placeholder="Enter your email"
+                                       class="input-xlarge" />
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label">Password:</label>
+                            <div class="controls">
+                                <input name="pass" type="password"
+                                       placeholder="Enter your password"
+                                       class="input-xlarge" />
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label">
+                                Password:
+                            </label>
+                            <div class="controls">
+                                <input name="pass-re" type="password"
+                                       placeholder="Enter your password"
+                                       class="input-xlarge">
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="actions">
+                            <input tabindex="9" class="btn btn-inverse large"
+                                   type="submit" value="Create your account">
+                        </div>
+                        {% if msg_reg %}
+                                <div class="alert alert-danger" role="alert"
+                                     onclick="$(this).remove();">
+                                    {{ msg_reg }}
+                                </div>
+                        {% endif %}
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+    </section>
 {% endblock %}

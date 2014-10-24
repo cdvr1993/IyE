@@ -1,10 +1,46 @@
-<!DOCTYPE html>
-<html>
-<head lang="en">
-    <meta charset="UTF-8">
-    <title></title>
-</head>
-<body>
+{% extends 'base.html' %}
+{% load staticfiles %}
 
-</body>
-</html>
+{% block body %}
+    <div class="row center">
+        <h3>
+            Información adicional
+        </h3>
+    </div>
+    <form>
+        <fieldset>
+            <div class="span4">
+                <div class="control-group">
+                    <label class="control-label">
+                        Nombre completo
+                    </label>
+                    <div class="controls">
+                        <input type="text"  />
+                    </div>
+                </div>
+            </div>
+
+            <div class="span4">
+                <div class="control-group">
+                    <label class="control-label">
+                        Número exterior
+                    </label>
+                    <div class="controls">
+                        <input type="text" />
+                    </div>
+                </div>
+            </div>
+
+            <div class="span3">
+                <div class="control-group">
+                    <label class="control-label">
+                        Calle
+                    </label>
+                    <div class="controls">
+                        <input type="text" />
+                    </div>
+                </div>
+            </div>
+        </fieldset>
+    </form>
+{% endblock %}
