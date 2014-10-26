@@ -38,3 +38,35 @@ Development
  pip install -r requirements.txt
  ```
  
+Deploy to Openshift (tornado server)
+---
+
+1. First you need to create a new project using the "Do it Yourself" cartridge.
+1. Then you need to install python 3.
+ ```
+ wget http://www.python.org/ftp/python/3.3.5/Python-3.3.5.tar.xz
+ tar xJf ./Python-3.3.5.tar.xz
+ cd ./Python-3.3.5
+ ./configure --prefix={INSTALL_PATH}
+ make && sudo make install
+ ```
+
+1. Then copy the manage.py file to a new onew named "manage_openshift.py".
+1. Then edit the listen line (the "DIY" is the project's name):
+ ```
+ server.listen(os.environ['OPENSHIFT_DIY_PORT'], os.environ['OPENSHIFT_DIY_IP'])
+ ```
+ 
+1. Finally you need to edit the start and stop scripts under "{REPO_DIR}/.openshift/action_hooks":
+ 1. Start
+  ```
+  #!/bin/bash
+  nohup ${OPENSHIFT_REPO_DIR}/diy/IyE/manage_openshift.py > ${OPENSHIFT_DIY_LOG_DIR}/iye.log 2>&1 &
+  ```
+  
+ 1. Stop
+  ```
+  #!/bin/bash
+  kill `ps -ef | grep manage | grep -v grep | awk '{ print $2 }'` > /dev/null 2>&1
+  exit 0
+  ```
