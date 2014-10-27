@@ -9,4 +9,5 @@ urlpatterns = patterns('',
                        url(r'^contact$', 'IyE.views.contact'),
                        url(r'^about$', 'IyE.views.about'),
                        url(r'^cart$', 'IyE.views.cart'),
+                       url(r'^pay$', 'IyE.payments.pay'),
 )

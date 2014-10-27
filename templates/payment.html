@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block head %}
+    <script type="application/javascript" src="{% static 'js/conekta.js' %}">
+    </script>
+    <script type="application/javascript">
+        Conekta.setPublishableKey('key_KJysdbf6PotS2ut2');
+    </script>
+{% endblock %}
+{% block body %}
+    <section class="main-content">
+        <div class="row">
+            <div class="span5">
+                <h4 class="title">
+                    Realizar pago
+                </h4>
+
+                <!-- Payment form -->
+                <form method="post" action=".">
+                    {% csrf_token %}
+                    <fieldset>
+                        <div class="control-group">
+                            <label class="control-label">
+                                Titular de la tarjeta
+                            </label>
+
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+    </section>
+{% endblock %}

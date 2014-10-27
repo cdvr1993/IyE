@@ -7,12 +7,15 @@ from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login as login_user
 from django.shortcuts import render_to_response
 from django.template import RequestContext
+from django.db.models import ObjectDoesNotExist
+
+from IyE.models import UserDetail
 
 
 def index(req):
     """ Returns the site's homepage
     """
-    return render_to_response('index.html', dict(), RequestContext(req))
+    return render_to_response('index.html', RequestContext(req))
 
 
 def login(req):
@@ -86,7 +89,7 @@ def about(req):
     TODO:
         Maybe will be a good idea to check the actual content of this section
     """
-    return render_to_response('about.html')
+    return render_to_response('about.html', RequestContext(req))
 
 
 def cart(req):
@@ -94,6 +97,37 @@ def cart(req):
     """
     return render_to_response('cart.html')
 
+
 def user_info(req):
-    if req.method == 'GET':
-        return render_to_response('user_info.html')
+    res = dict()
+    if req.method == 'POST':
+        d = req.POST
+        try:
+            detail = UserDetail.objects.get(user=req.user)
+        except ObjectDoesNotExist as e:
+            detail = UserDetail(user=req.user)
+        try:
+            detail.fullname = d.get('fullname', '')
+            detail.number_exterior = d.get('num-ext', '')
+            detail.number_interior = d.get('num-int', '')
+            detail.street = d.get('street', '')
+            detail.colony = d.get('colony', '')
+            cp = d.get('cp', 0)
+            detail.cp = 0 if not str(cp).isdigit() else int(cp)
+            detail.city = d.get('city', '')
+            detail.state = d.get('state', '')
+            detail.country = d.get('country', '')
+            detail.save()
+            res['msg_type'] = 'success'
+            res['msg_data'] = 'Éxito al guardar'
+            res['detail'] = detail
+        except Exception as e:
+            res['msg_type'] = 'error'
+            res['msg_data'] = 'Ocurrió un error al guardar la información'
+        return render_to_response('user_info.html', res, RequestContext(req))
+
+    try:
+        res['detail'] = UserDetail.objects.get(user=req.user)
+    except ObjectDoesNotExist as e:
+        res['detail'] = None
+    return render_to_response('user_info.html', res, RequestContext(req))
