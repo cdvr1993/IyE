@@ -18,60 +18,60 @@
     <section class="main-content">
         <div class="row">
             <div class="span7">
-                <h5>
-                    Atención 24/7
-                </h5>
-                <form method="post" action="/contact">
-                    {% csrf_token %}
-                    <fieldset>
-                        <div class="clearfix">
-                            <label for="name">
-                                <span>
-                                    Nombre:
-                                </span>
-                            </label>
-                            <div class="input">
-                                <input tabindex="1" size="18" name="name"
-                                       type="text" value="" class="input-xlarge"
-                                       placeholder="Nombre completo" />
-                            </div>
-                        </div>
+               <h5>
+                 Atención 24/7
+               </h5>
+               <form method="post" action="/contact">
+                 {% csrf_token %}
+                 <fieldset>
+                     <div class="clearfix">
+                         <label for="name">
+                             <span>
+                                 Nombre:
+                             </span>
+                         </label>
+                         <div class="input">
+                             <input tabindex="1" size="18" name="name" type="text" value="{{ name }}"
+                                    class="input-xlarge" placeholder="Nombre completo" />
+                         </div>
+                     </div>
 
-                        <div class="clearfix">
-                            <label for="email">
-                                <span>
-                                    Email:
-                                </span>
-                            </label>
-                            <div class="input">
-                                <input tabindex="2" size="25" name="email"
-                                       type="text" value="" class="input-xlarge"
-                                       placeholder="Dirección de correo" />
-                            </div>
-                        </div>
+                     <div class="clearfix">
+                         <label for="email">
+                             <span>
+                                 Email:
+                             </span>
+                         </label>
+                         <div class="input">
+                             <input tabindex="2" size="25" name="email" type="text" value="{{ email }}"
+                                    class="input-xlarge" placeholder="Dirección de correo" />
+                         </div>
+                     </div>
 
-                        <div class="clearfix">
-                            <label for="message">
-                                <span>
-                                    Mensaje:
-                                </span>
-                            </label>
-                            <div class="input">
-                                <textarea tabindex="3" class="input-xlarge"
-                                          id="message" name="msg" rows="7"
-                                          placeholder="Mensaje">
-                                </textarea>
-                            </div>
-                        </div>
+                     <div class="clearfix">
+                         <label for="message">
+                             <span>
+                                 Mensaje:
+                             </span>
+                         </label>
+                         <div class="input">
+                             <textarea tabindex="3" class="input-xlarge" id="message" name="email_msg" rows="7"
+                                       placeholder="Mensaje">{{ email_msg }}</textarea>
+                         </div>
+                     </div>
 
-                        <div class="actions">
-                            <button tabindex="3" type="submit"
-                                class="btn btn-inverse">
-                                Enviar mensaje
-                            </button>
-                        </div>
-                    </fieldset>
-                </form>
+                     <div class="actions">
+                         <button tabindex="3" type="submit" class="btn btn-inverse">
+                             Enviar mensaje
+                         </button>
+                     </div>
+                 </fieldset>
+               </form>
+               {% if msg_type %}
+                  <div class="alert-{{ msg_type }}" onclick="$(this).remove();">
+                        {{ msg }}
+                  </div>
+               {% endif %}
             </div>
             <div class="span5">
                 <div>

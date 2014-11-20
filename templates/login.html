@@ -14,8 +14,7 @@
     <img class="pageBanner" src="{% static 'img/pageBanner.png' %}"
         alt="New products" >
         {% if success_reg %}
-                <div class="alert alert-success" role="alert"
-                    onclick="$(this).remove();">
+                <div class="alert alert-success" role="alert" onclick="$(this).remove();">
                     {{ success_reg }}
                 </div>
         {% endif %}
@@ -25,14 +24,14 @@
             <div class="span5">
                 <h4 class="title">
                     <span class="text">
-                        <strong>Login</strong> Form
+                        <strong>Login</strong>
                     </span>
                 </h4>
 
                 <!-- Login form -->
                 <form id="login" action="/user/login" method="post">
                 {% csrf_token %}
-                    <input type="hidden" name="next" value="/">
+                    <input type="hidden" name="next" value="{{ request.GET.path }}">
                     <fieldset>
 
                         <div class="control-group">
@@ -40,9 +39,7 @@
                                 Usuario
                             </label>
                             <div class="controls">
-                                <input type="text"
-                                       placeholder="Enter your username"
-                                       name="user" class="input-xlarge">
+                                <input type="text" placeholder="Escribe tu usuario" name="user" class="input-xlarge">
                             </div>
                         </div>
 
@@ -51,24 +48,22 @@
                                 Contraseña
                             </label>
                             <div class="controls">
-                                <input type="password"
-                                       placeholder="Enter your password"
-                                       name="pass" class="input-xlarge">
+                                <input type="password" placeholder="Escribe tu contraseña" name="pass"
+                                       class="input-xlarge">
                             </div>
                         </div>
 
                         <div class="control-group">
-                            <input tabindex="3" class="btn btn-inverse large"
-                                   type="submit" value="Sign into your account">
+                            <input tabindex="3" class="btn btn-inverse large" type="submit" value="Login">
                             {% if msg %}
-                                <div class="alert alert-danger" role="alert"
-                                     onclick="$(this).remove();">{{ msg }}</div>
+                                <div class="alert alert-danger" role="alert" onclick="$(this).remove();">
+                                   {{ msg }}
+                                </div>
                             {% endif %}
                             <hr>
-                            <p class="reset">Recover your
-                                <a tabindex="4"href="#"
-                                   title="Recover your username or password">
-                                    username or password
+                            <p class="reset">Recupera tu
+                                <a tabindex="4"href="#" title="Recupera tu usuario y contraseña">
+                                    usuario o contraseña
                                 </a>
                             </p>
                         </div>
@@ -80,7 +75,7 @@
             <div class="span7">
                 <h4 class="title">
                     <span class="text">
-                        <strong>Register</strong> Form
+                        <strong>Registro</strong>
                     </span>
                 </h4>
 
@@ -92,50 +87,42 @@
                     <fieldset>
                         <div class="control-group">
                             <label class="control-label">
-                                Username
+                                Usuario
                             </label>
                             <div class="controls">
-                                <input name="user" type="text"
-                                       placeholder="Enter your username"
+                                <input name="user" type="text" placeholder="Escribe tu usuario" class="input-xlarge" />
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label">
+                                Cuenta de correo:
+                            </label>
+                            <div class="controls">
+                                <input name="email" type="text" placeholder="Escribe tu correo" class="input-xlarge" />
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label">Contraseña:</label>
+                            <div class="controls">
+                                <input name="pass" type="password" placeholder="Escribe tu contraseña"
                                        class="input-xlarge" />
                             </div>
                         </div>
                         <div class="control-group">
                             <label class="control-label">
-                                Email address:
+                                Verificación de contraseña:
                             </label>
                             <div class="controls">
-                                <input name="email" type="text"
-                                       placeholder="Enter your email"
-                                       class="input-xlarge" />
-                            </div>
-                        </div>
-                        <div class="control-group">
-                            <label class="control-label">Password:</label>
-                            <div class="controls">
-                                <input name="pass" type="password"
-                                       placeholder="Enter your password"
-                                       class="input-xlarge" />
-                            </div>
-                        </div>
-                        <div class="control-group">
-                            <label class="control-label">
-                                Password:
-                            </label>
-                            <div class="controls">
-                                <input name="pass-re" type="password"
-                                       placeholder="Enter your password"
+                                <input name="pass-re" type="password" placeholder="Vuelve a escribir contraseña"
                                        class="input-xlarge">
                             </div>
                         </div>
                         <hr>
                         <div class="actions">
-                            <input tabindex="9" class="btn btn-inverse large"
-                                   type="submit" value="Create your account">
+                            <input tabindex="9" class="btn btn-inverse large" type="submit" value="Crear">
                         </div>
                         {% if msg_reg %}
-                                <div class="alert alert-danger" role="alert"
-                                     onclick="$(this).remove();">
+                                <div class="alert alert-danger" role="alert" onclick="$(this).remove();">
                                     {{ msg_reg }}
                                 </div>
                         {% endif %}

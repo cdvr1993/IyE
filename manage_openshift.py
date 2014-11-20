@@ -21,6 +21,16 @@ class SocketHandler(websocket.WebSocketHandler):
 
 def main():
     os.environ.setdefault("DJANGO_SETTINGS_MODULE", "IyE.settings")
+    settings.DATABASES = {
+        'default': {
+            'HOST': os.environ['OPENSHIFT_POSTGRESQL_DB_HOST'],
+            'PORT': os.environ['OPENSHIFT_POSTGRESQL_DB_PORT'],
+            'ENGINE': 'django.db.backends.postgresql_psycopg2',
+            'NAME': 'iye',
+            'USER': os.environ['OPENSHIFT_POSTGRESQL_DB_USERNAME'],
+            'PASSWORD': os.environ['OPENSHIFT_POSTGRESQL_DB_PASSWORD']
+        }
+    }
     parse_command_line()
     wsgi_app = wsgi.WSGIContainer(get_wsgi_application())
     tornado_app = \

@@ -1,0 +1,734 @@
+[
+{
+  "model": "IyE.product",
+  "pk": 1,
+  "fields": {
+    "new": true,
+    "name": "Linux by choice",
+    "image_path": "img/store/shirts/linux_choice.png",
+    "popular": false
+  }
+},
+{
+  "model": "IyE.product",
+  "pk": 2,
+  "fields": {
+    "new": true,
+    "name": "Binary people",
+    "image_path": "img/store/shirts/binary.png",
+    "popular": false
+  }
+},
+{
+  "model": "IyE.product",
+  "pk": 3,
+  "fields": {
+    "new": true,
+    "name": "I'm in the nigths watch",
+    "image_path": "img/store/shirts/nightwatch.png",
+    "popular": false
+  }
+},
+{
+  "model": "IyE.product",
+  "pk": 4,
+  "fields": {
+    "new": true,
+    "name": "May the force be with you",
+    "image_path": "img/store/shirts/forcewithyou.png",
+    "popular": false
+  }
+},
+{
+  "model": "IyE.product",
+  "pk": 5,
+  "fields": {
+    "new": true,
+    "name": "There is no place like \"localhost\"",
+    "image_path": "img/store/shirts/home_place.png",
+    "popular": false
+  }
+},
+{
+  "model": "IyE.product",
+  "pk": 6,
+  "fields": {
+    "new": true,
+    "name": "I love geeks",
+    "image_path": "img/store/shirts/lovegeeks.png",
+    "popular": false
+  }
+},
+{
+  "model": "IyE.product",
+  "pk": 7,
+  "fields": {
+    "new": true,
+    "name": "Mario #1",
+    "image_path": "img/store/shirts/mario1.png",
+    "popular": false
+  }
+},
+{
+  "model": "IyE.product",
+  "pk": 8,
+  "fields": {
+    "new": true,
+    "name": "No era penal",
+    "image_path": "img/store/shirts/noerapenal.png",
+    "popular": false
+  }
+},
+{
+  "model": "IyE.product",
+  "pk": 9,
+  "fields": {
+    "new": true,
+    "name": "Winter is coming",
+    "image_path": "img/store/shirts/stark_black.png",
+    "popular": false
+  }
+},
+{
+  "model": "IyE.product",
+  "pk": 10,
+  "fields": {
+    "new": true,
+    "name": "You turn me on",
+    "image_path": "img/store/shirts/turnon.png",
+    "popular": false
+  }
+},
+{
+  "model": "IyE.product",
+  "pk": 11,
+  "fields": {
+    "new": true,
+    "name": "Born date unix",
+    "image_path": "img/store/shirts/unix_time.png",
+    "popular": false
+  }
+},
+{
+  "model": "IyE.product",
+  "pk": 12,
+  "fields": {
+    "new": true,
+    "name": "Arbol minas tirith",
+    "image_path": "img/store/shirts/arbol_minastirith.png",
+    "popular": false
+  }
+},
+{
+  "model": "IyE.product",
+  "pk": 13,
+  "fields": {
+    "new": true,
+    "name": "Bacon",
+    "image_path": "img/store/shirts/bacon.png",
+    "popular": false
+  }
+},
+{
+  "model": "IyE.product",
+  "pk": 14,
+  "fields": {
+    "new": true,
+    "name": "Geek inside",
+    "image_path": "img/store/shirts/inside_geek.png",
+    "popular": false
+  }
+},
+{
+  "model": "IyE.product",
+  "pk": 15,
+  "fields": {
+    "new": true,
+    "name": "Life is too short to remove usb safely",
+    "image_path": "img/store/shirts/usb.png",
+    "popular": false
+  }
+},
+{
+  "model": "IyE.color",
+  "pk": 1,
+  "fields": {
+    "image_name": "white",
+    "name": "Blanco"
+  }
+},
+{
+  "model": "IyE.color",
+  "pk": 2,
+  "fields": {
+    "image_name": "red",
+    "name": "Rojo"
+  }
+},
+{
+  "model": "IyE.color",
+  "pk": 3,
+  "fields": {
+    "image_name": "black",
+    "name": "Negro"
+  }
+},
+{
+  "model": "IyE.color",
+  "pk": 4,
+  "fields": {
+    "image_name": "turquoise",
+    "name": "Turquesa"
+  }
+},
+{
+  "model": "IyE.color",
+  "pk": 5,
+  "fields": {
+    "image_name": "yellow",
+    "name": "Amarillo"
+  }
+},
+{
+  "model": "IyE.color",
+  "pk": 6,
+  "fields": {
+    "image_name": "minimal_gray",
+    "name": "Jaspe"
+  }
+},
+{
+  "model": "IyE.color",
+  "pk": 7,
+  "fields": {
+    "image_name": "dark_blue",
+    "name": "Azul marino"
+  }
+},
+{
+  "model": "IyE.color",
+  "pk": 8,
+  "fields": {
+    "image_name": "sky_blue",
+    "name": "Azul cielo"
+  }
+},
+{
+  "model": "IyE.color",
+  "pk": 9,
+  "fields": {
+    "image_name": "indigo_blue",
+    "name": "Azul indigo"
+  }
+},
+{
+  "model": "IyE.color",
+  "pk": 10,
+  "fields": {
+    "image_name": "orange",
+    "name": "Naranja"
+  }
+},
+{
+  "model": "IyE.color",
+  "pk": 11,
+  "fields": {
+    "image_name": "king_blue",
+    "name": "Azul rey"
+  }
+},
+{
+  "model": "IyE.color",
+  "pk": 12,
+  "fields": {
+    "image_name": "jade",
+    "name": "Jade"
+  }
+},
+{
+  "model": "IyE.color",
+  "pk": 13,
+  "fields": {
+    "image_name": "gray",
+    "name": "Gris"
+  }
+},
+{
+  "model": "IyE.color",
+  "pk": 14,
+  "fields": {
+    "image_name": "sand",
+    "name": "Arena"
+  }
+},
+{
+  "model": "IyE.color",
+  "pk": 15,
+  "fields": {
+    "image_name": "mango",
+    "name": "Mango"
+  }
+},
+{
+  "model": "IyE.color",
+  "pk": 16,
+  "fields": {
+    "image_name": "brown",
+    "name": "Caf\u00e9"
+  }
+},
+{
+  "model": "IyE.color",
+  "pk": 17,
+  "fields": {
+    "image_name": "pink",
+    "name": "Rosa"
+  }
+},
+{
+  "model": "IyE.color",
+  "pk": 18,
+  "fields": {
+    "image_name": "aqua",
+    "name": "Aqua"
+  }
+},
+{
+  "model": "IyE.color",
+  "pk": 19,
+  "fields": {
+    "image_name": "fiusha",
+    "name": "Fiusha"
+  }
+},
+{
+  "model": "IyE.color",
+  "pk": 20,
+  "fields": {
+    "image_name": "purple",
+    "name": "Purple"
+  }
+},
+{
+  "model": "IyE.color",
+  "pk": 21,
+  "fields": {
+    "image_name": "carbon_jaspe",
+    "name": "Jaspe carb\u00f3n"
+  }
+},
+{
+  "model": "IyE.productkind",
+  "pk": 1,
+  "fields": {
+    "name": "Playeras",
+    "unisex": false,
+    "price": 127.6,
+  }
+},
+{
+  "model": "IyE.productkind",
+  "pk": 2,
+  "fields": {
+    "name": "Sudaderas",
+    "unisex": false,
+    "price": 233.16,
+  }
+},
+{
+  "model": "IyE.productkind",
+  "pk": 3,
+  "fields": {
+    "name": "Tazas",
+    "unisex": true,
+    "price": 97.44,
+  }
+},
+{
+  "model": "IyE.colorkind",
+  "pk": 1,
+  "fields": {
+    "kind": 1,
+    "color": 1,
+    "gender": "m"
+  }
+},
+{
+  "model": "IyE.colorkind",
+  "pk": 2,
+  "fields": {
+    "kind": 1,
+    "color": 2,
+    "gender": "m"
+  }
+},
+{
+  "model": "IyE.colorkind",
+  "pk": 3,
+  "fields": {
+    "kind": 1,
+    "color": 3,
+    "gender": "m"
+  }
+},
+{
+  "model": "IyE.colorkind",
+  "pk": 4,
+  "fields": {
+    "kind": 1,
+    "color": 4,
+    "gender": "m"
+  }
+},
+{
+  "model": "IyE.colorkind",
+  "pk": 5,
+  "fields": {
+    "kind": 1,
+    "color": 5,
+    "gender": "m"
+  }
+},
+{
+  "model": "IyE.colorkind",
+  "pk": 6,
+  "fields": {
+    "kind": 1,
+    "color": 6,
+    "gender": "m"
+  }
+},
+{
+  "model": "IyE.colorkind",
+  "pk": 7,
+  "fields": {
+    "kind": 1,
+    "color": 7,
+    "gender": "m"
+  }
+},
+{
+  "model": "IyE.colorkind",
+  "pk": 8,
+  "fields": {
+    "kind": 1,
+    "color": 8,
+    "gender": "m"
+  }
+},
+{
+  "model": "IyE.colorkind",
+  "pk": 9,
+  "fields": {
+    "kind": 1,
+    "color": 9,
+    "gender": "m"
+  }
+},
+{
+  "model": "IyE.colorkind",
+  "pk": 10,
+  "fields": {
+    "kind": 1,
+    "color": 10,
+    "gender": "m"
+  }
+},
+{
+  "model": "IyE.colorkind",
+  "pk": 11,
+  "fields": {
+    "kind": 1,
+    "color": 11,
+    "gender": "m"
+  }
+},
+{
+  "model": "IyE.colorkind",
+  "pk": 12,
+  "fields": {
+    "kind": 1,
+    "color": 12,
+    "gender": "m"
+  }
+},
+{
+  "model": "IyE.colorkind",
+  "pk": 13,
+  "fields": {
+    "kind": 1,
+    "color": 13,
+    "gender": "m"
+  }
+},
+{
+  "model": "IyE.colorkind",
+  "pk": 14,
+  "fields": {
+    "kind": 1,
+    "color": 14,
+    "gender": "m"
+  }
+},
+{
+  "model": "IyE.colorkind",
+  "pk": 15,
+  "fields": {
+    "kind": 1,
+    "color": 15,
+    "gender": "m"
+  }
+},
+{
+  "model": "IyE.colorkind",
+  "pk": 16,
+  "fields": {
+    "kind": 1,
+    "color": 16,
+    "gender": "m"
+  }
+},
+{
+  "model": "IyE.colorkind",
+  "pk": 17,
+  "fields": {
+    "kind": 1,
+    "color": 1,
+    "gender": "f"
+  }
+},
+{
+  "model": "IyE.colorkind",
+  "pk": 18,
+  "fields": {
+    "kind": 1,
+    "color": 2,
+    "gender": "f"
+  }
+},
+{
+  "model": "IyE.colorkind",
+  "pk": 19,
+  "fields": {
+    "kind": 1,
+    "color": 3,
+    "gender": "f"
+  }
+},
+{
+  "model": "IyE.colorkind",
+  "pk": 20,
+  "fields": {
+    "kind": 1,
+    "color": 4,
+    "gender": "f"
+  }
+},
+{
+  "model": "IyE.colorkind",
+  "pk": 21,
+  "fields": {
+    "kind": 1,
+    "color": 5,
+    "gender": "f"
+  }
+},
+{
+  "model": "IyE.colorkind",
+  "pk": 22,
+  "fields": {
+    "kind": 1,
+    "color": 6,
+    "gender": "f"
+  }
+},
+{
+  "model": "IyE.colorkind",
+  "pk": 23,
+  "fields": {
+    "kind": 1,
+    "color": 7,
+    "gender": "f"
+  }
+},
+{
+  "model": "IyE.colorkind",
+  "pk": 24,
+  "fields": {
+    "kind": 1,
+    "color": 8,
+    "gender": "f"
+  }
+},
+{
+  "model": "IyE.colorkind",
+  "pk": 25,
+  "fields": {
+    "kind": 1,
+    "color": 17,
+    "gender": "f"
+  }
+},
+{
+  "model": "IyE.colorkind",
+  "pk": 26,
+  "fields": {
+    "kind": 1,
+    "color": 18,
+    "gender": "f"
+  }
+},
+{
+  "model": "IyE.colorkind",
+  "pk": 27,
+  "fields": {
+    "kind": 1,
+    "color": 19,
+    "gender": "f"
+  }
+},
+{
+  "model": "IyE.colorkind",
+  "pk": 28,
+  "fields": {
+    "kind": 1,
+    "color": 20,
+    "gender": "f"
+  }
+},
+{
+  "model": "IyE.colorkind",
+  "pk": 29,
+  "fields": {
+    "kind": 2,
+    "color": 1,
+    "gender": "m"
+  }
+},
+{
+  "model": "IyE.colorkind",
+  "pk": 30,
+  "fields": {
+    "kind": 2,
+    "color": 2,
+    "gender": "m"
+  }
+},
+{
+  "model": "IyE.colorkind",
+  "pk": 31,
+  "fields": {
+    "kind": 2,
+    "color": 3,
+    "gender": "m"
+  }
+},
+{
+  "model": "IyE.colorkind",
+  "pk": 32,
+  "fields": {
+    "kind": 2,
+    "color": 6,
+    "gender": "m"
+  }
+},
+{
+  "model": "IyE.colorkind",
+  "pk": 33,
+  "fields": {
+    "kind": 2,
+    "color": 7,
+    "gender": "m"
+  }
+},
+{
+  "model": "IyE.colorkind",
+  "pk": 34,
+  "fields": {
+    "kind": 2,
+    "color": 11,
+    "gender": "m"
+  }
+},
+{
+  "model": "IyE.colorkind",
+  "pk": 35,
+  "fields": {
+    "kind": 2,
+    "color": 21,
+    "gender": "m"
+  }
+},
+{
+  "model": "IyE.colorkind",
+  "pk": 36,
+  "fields": {
+    "kind": 2,
+    "color": 1,
+    "gender": "f"
+  }
+},
+{
+  "model": "IyE.colorkind",
+  "pk": 37,
+  "fields": {
+    "kind": 2,
+    "color": 2,
+    "gender": "f"
+  }
+},
+{
+  "model": "IyE.colorkind",
+  "pk": 38,
+  "fields": {
+    "kind": 2,
+    "color": 3,
+    "gender": "f"
+  }
+},
+{
+  "model": "IyE.colorkind",
+  "pk": 39,
+  "fields": {
+    "kind": 2,
+    "color": 6,
+    "gender": "f"
+  }
+},
+{
+  "model": "IyE.colorkind",
+  "pk": 40,
+  "fields": {
+    "kind": 2,
+    "color": 7,
+    "gender": "f"
+  }
+},
+{
+  "model": "IyE.colorkind",
+  "pk": 41,
+  "fields": {
+    "kind": 2,
+    "color": 11,
+    "gender": "f"
+  }
+},
+{
+  "model": "IyE.colorkind",
+  "pk": 42,
+  "fields": {
+    "kind": 2,
+    "color": 19,
+    "gender": "f"
+  }
+},
+{
+  "model": "IyE.colorkind",
+  "pk": 43,
+  "fields": {
+    "kind": 3,
+    "color": 1,
+    "gender": "u"
+  }
+}
+]

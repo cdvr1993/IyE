@@ -35,6 +35,7 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'mathfilters',
     'IyE',
 )
 
@@ -94,4 +95,14 @@ TEMPLATE_DIRS = (
 
 TEMPLATE_CONTEXT_PROCESSORS = (
     "django.contrib.auth.context_processors.auth",
+    'django.core.context_processors.request',
 )
+
+# E-mail settings
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = os.environ.get('GMAIL_USER', '')
+EMAIL_HOST_PASSWORD = os.environ.get('GMAIL_PASS', '')
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+
+IVA = 1.16

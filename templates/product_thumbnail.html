@@ -1,0 +1,11 @@
+{% load staticfiles %}
+<li class="span3">
+    <div class="product-box">
+        <span class="sale_tag"></span>
+            <a href="product/detail?product={{ product.id }}">
+               <img class="product" src="{% static '' %}{{ product.image_path }}" alt="" />
+            </a>
+        <a href="product/detail?product={{ product.id }}" class="title">{{ product.name }}</a><br/>
+        <p class="price">${{ product.price|floatformat:2 }}</p>
+    </div>
+</li>
